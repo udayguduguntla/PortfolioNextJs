@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Uday Kumar Guduguntla - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, showcasing my work as a Full Stack Developer and AI Innovator.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern Design**: Clean, professional layout with glassmorphism effects
+- **Responsive**: Mobile-first design that works on all devices
+- **Interactive**: Smooth animations and micro-interactions
+- **Performance Optimized**: Built with Next.js for fast loading times
+- **Accessibility Focused**: ARIA labels and keyboard navigation support
+- **SEO Optimized**: Meta tags and structured data
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.5.6
+- **Language**: TypeScript
+- **Styling**: CSS-in-JS with custom CSS variables
+- **Icons**: Font Awesome
+- **Fonts**: Inter (Google Fonts)
+- **Animations**: CSS animations and transitions
+
+## 📱 Sections
+
+1. **Hero Section**: Eye-catching introduction with animated roles carousel
+2. **Stats**: Animated counters showing key metrics
+3. **About**: Personal information and highlights
+4. **Services**: What I do - Full Stack Development, AI/ML, Accessibility Technology
+5. **Skills**: Tech stack organized by categories
+6. **Featured Projects**: Showcase of major projects with live demos
+7. **Impact**: Real-world impact and testimonials
+8. **Achievements**: Timeline of key milestones
+9. **Contact**: Contact information and social links
+10. **Footer**: Comprehensive site navigation and branding
+
+## 🎨 Design Features
+
+- **Color Scheme**: Blue (#3b82f6) and Purple (#8b5cf6) gradients
+- **Glass Effects**: Backdrop blur and transparency
+- **Floating Navigation**: Responsive navigation menu
+- **Scroll Animations**: Intersection Observer API for smooth reveals
+- **Role Carousel**: Animated text rotation in hero section
+- **Hover Effects**: Interactive elements with smooth transitions
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── components/          # React components
+│   │   │   ├── FloatingNav.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── StatsSection.tsx
+│   │   │   ├── AboutSection.tsx
+│   │   │   ├── ServicesSection.tsx
+│   │   │   ├── SkillsSection.tsx
+│   │   │   ├── FeaturedProjects.tsx
+│   │   │   ├── ImpactSection.tsx
+│   │   │   ├── AchievementsSection.tsx
+│   │   │   ├── ContactSection.tsx
+│   │   │   ├── CTASection.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── ScrollToTop.tsx
+│   │   ├── globals.css          # Global styles
+│   │   ├── layout.tsx           # Root layout
+│   │   └── page.tsx             # Home page
+├── public/
+│   └── assets/                  # Static assets
+│       ├── images/              # Profile and project images
+│       ├── documents/           # Resume and documents
+│       ├── css/                 # Legacy CSS files
+│       └── js/                  # Legacy JavaScript files
+├── reference-pages/             # Original HTML pages for reference
+├── reference-projects/          # Original project source code
+├── CONTENT_INVENTORY.md         # Content migration reference
+└── README.md
+```
 
-## Deploy on Vercel
+## 🎯 Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### FloatingNav
+- Responsive navigation menu
+- Smooth animations
+- Social media links
+- Auto-hide on scroll
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### HeroSection
+- Animated role carousel
+- Profile image with floating effects
+- Call-to-action buttons
+- Particle background
+
+### FeaturedProjects
+- Main project showcase
+- Technology tags
+- Live demo links
+- GitHub repository links
+
+### StatsSection
+- Animated counters
+- Intersection Observer for triggers
+- Responsive grid layout
+
+## 📧 Contact Information
+
+- **Email**: udayguduguntla@gmail.com
+- **LinkedIn**: [linkedin.com/in/udayguduguntla](https://linkedin.com/in/udayguduguntla)
+- **GitHub**: [github.com/udayguduguntla](https://github.com/udayguduguntla)
+- **LeetCode**: [leetcode.com/u/udayguduguntla](https://leetcode.com/u/udayguduguntla)
+- **CodeChef**: [codechef.com/users/udayguduguntla](https://codechef.com/users/udayguduguntla)
+
+## 🌟 Featured Projects
+
+1. **Live Camera Color Detection** - Accessibility tool for color-blind individuals
+2. **Smart Attendance System** - AI-powered facial recognition system
+3. **Advanced File Manager** - Complete file management with vanilla JavaScript
+4. **License Plate Detection** - OCR system for vehicle identification
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Feel free to fork this project and customize it for your own use. If you make improvements, pull requests are welcome!
+
+---
+
+**Built with ❤️ by Uday Kumar Guduguntla**
