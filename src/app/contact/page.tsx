@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import { portfolioData } from '@/data/portfolio'
-import AntiqueNavigation from '../components/AntiqueNavigation'
+import ModernNavigation from '../components/ModernNavigation'
 import InteractiveStarBackground from '../components/InteractiveStarBackground'
+import PageTransition from '../components/PageTransition'
+import { motion } from 'framer-motion'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -30,7 +32,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen relative pt-24 pb-16">
       <InteractiveStarBackground variant="contact" />
-      <AntiqueNavigation />
+      <ModernNavigation />
       
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

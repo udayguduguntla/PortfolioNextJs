@@ -48,7 +48,7 @@ export const portfolioData = {
         "Accessibility-focused design"
       ],
       github: "https://github.com/udayguduguntla/ColorDetention",
-      demo: "/demos/color-detection",
+      demo: "https://github.com/udayguduguntla/ColorDetention",
       category: "Computer Vision",
       featured: true,
       status: "completed"
@@ -67,7 +67,7 @@ export const portfolioData = {
         "Real-time processing"
       ],
       github: "https://github.com/udayguduguntla/LicencePlateDetention",
-      demo: "/demos/license-plate",
+      demo: "https://github.com/udayguduguntla/LicencePlateDetention",
       category: "Computer Vision",
       featured: false,
       status: "completed"
@@ -86,7 +86,7 @@ export const portfolioData = {
         "Attendance reports generation"
       ],
       github: "https://github.com/udayguduguntla/FaceReconitionBasedAttendence",
-      demo: "/demos/face-attendance",
+      demo: "https://github.com/udayguduguntla/FaceReconitionBasedAttendence",
       category: "Machine Learning",
       featured: false,
       status: "completed"
@@ -105,7 +105,7 @@ export const portfolioData = {
         "Multi-threading support"
       ],
       github: "https://github.com/udayguduguntla/BuildingTrafficeOnAWebsiteJava",
-      demo: "/demos/traffic-generation",
+      demo: "https://github.com/udayguduguntla/BuildingTrafficeOnAWebsiteJava",
       category: "Web Automation",
       featured: false,
       status: "completed"

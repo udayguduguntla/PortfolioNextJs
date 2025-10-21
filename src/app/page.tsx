@@ -1,5 +1,7 @@
+'use client'
+
 import HeroSection from './components/HeroSection'
-import AntiqueNavigation from './components/AntiqueNavigation'
+import ModernNavigation from './components/ModernNavigation'
 import InteractiveStarBackground from './components/InteractiveStarBackground'
 import { portfolioData } from '@/data/portfolio'
 import Link from 'next/link'
@@ -11,9 +13,9 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden relative min-h-screen">
       <InteractiveStarBackground variant="default" />
-      <AntiqueNavigation />
+      <ModernNavigation />
 
-      <div className="relative z-10">
+      <div className="relative z-10 pt-20">
         <HeroSection />
 
         {/* Quick Highlights Section */}
@@ -21,45 +23,64 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Featured Projects Preview */}
             <div className="mb-20">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
-                <p className="text-purple-200 text-lg">Showcasing Innovation Through Code</p>
+              <div className="text-center mb-16">
+                <h2 className="text-5xl font-bold text-white mb-6">
+                  Featured Projects
+                </h2>
+                <p className="text-purple-200 text-xl max-w-2xl mx-auto leading-relaxed">
+                  Showcasing Innovation Through Code
+                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                {featuredProjects.map((project) => (
-                  <Link
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                {featuredProjects.map((project, index) => (
+                  <div
                     key={project.id}
-                    href={`/projects/${project.id}`}
-                    className="purple-card p-6 hover:shadow-2xl transition-all duration-300 group hover:scale-105"
+                    className="group"
                   >
-                    <div className="flex items-center mb-4">
-                      <div className="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
-                        {project.category === 'Computer Vision' && '👁️'}
-                        {project.category === 'Machine Learning' && '🧠'}
-                        {project.category === 'Web Automation' && '🤖'}
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="block"
+                    >
+                      <div className="purple-card p-8 h-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <div className="flex items-start mb-6">
+                          <div className="text-4xl mr-4 p-3 bg-purple-500/20 rounded-xl group-hover:scale-110 transition-transform duration-200">
+                            {project.category === 'Computer Vision' && '👁️'}
+                            {project.category === 'Machine Learning' && '🧠'}
+                            {project.category === 'Web Automation' && '🤖'}
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300 mb-2">
+                              {project.title}
+                            </h3>
+                            <span className="inline-block px-3 py-1 bg-purple-500/30 text-purple-200 text-sm rounded-full border border-purple-400/30">
+                              {project.category}
+                            </span>
+                          </div>
+                        </div>
+                        <p className="text-gray-300 leading-relaxed text-base">
+                          {project.description.substring(0, 150)}...
+                        </p>
+                        <div className="mt-6 flex items-center text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
+                          <span className="text-sm font-medium">View Project</span>
+                          <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">
+                            →
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        <span className="text-purple-300 text-sm">{project.category}</span>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {project.description.substring(0, 120)}...
-                    </p>
-                  </Link>
+                    </Link>
+                  </div>
                 ))}
               </div>
 
               <div className="text-center">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center px-8 py-4 glass-purple text-white rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium text-lg"
-                >
-                  View All Projects
-                  <span className="ml-3 text-xl">→</span>
+                <Link href="/projects">
+                  <div className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl font-semibold text-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    View All Projects
+                    <span className="ml-3 text-xl">
+                      →
+                    </span>
+                  </div>
                 </Link>
               </div>
             </div>

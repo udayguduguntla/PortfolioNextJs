@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import { portfolioData } from '@/data/portfolio'
-import AntiqueNavigation from '../components/AntiqueNavigation'
+import ModernNavigation from '../components/ModernNavigation'
 import InteractiveStarBackground from '../components/InteractiveStarBackground'
-import ImageModal from '../components/ImageModal'
+import EnhancedImageModal from '../components/EnhancedImageModal'
 import achievementsData from '@/data/achievements.json'
+import Image from 'next/image'
 
 export default function AchievementsPage() {
   const realAchievements = achievementsData.achievements
@@ -26,17 +27,17 @@ export default function AchievementsPage() {
   return (
     <div className="min-h-screen relative pt-24 pb-16">
       <InteractiveStarBackground variant="achievements" />
-      <AntiqueNavigation />
+      <ModernNavigation />
       
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Vintage Header */}
-          <div className="text-center mb-16 ornament">
-            <h1 className="text-5xl sm:text-6xl font-display font-bold text-gray-800 mb-6">
-              Honors & Distinctions
+          {/* Modern Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+              Achievements & Recognition
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-accent">
-              A Chronicle of Scholarly Pursuits, Triumphs, and Distinguished Accomplishments
+            <p className="text-xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
+              A showcase of accomplishments, certifications, and milestones in my journey
             </p>
           </div>
 
@@ -82,52 +83,90 @@ export default function AchievementsPage() {
           {/* Real Achievements Section */}
           <div className="mb-16 sm:mb-20">
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">My Achievements</h2>
-              <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-yellow-600 to-orange-600 mx-auto rounded-full"></div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Featured Achievements</h2>
+              <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-purple-600 to-purple-700 mx-auto rounded-full"></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {realAchievements.map((achievement: any) => (
-                <div key={achievement.id} className="glass-enhanced interactive-glow rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group hover-lift">
-                  <div 
-                    className="h-32 sm:h-40 lg:h-48 flex items-center justify-center relative overflow-hidden"
-                    style={{ background: achievement.color }}
-                  >
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="relative z-10 text-center">
-                      <i className={`${achievement.icon} text-4xl sm:text-5xl lg:text-6xl text-white/90 group-hover:scale-110 transition-transform duration-300`}></i>
-                      <div className="mt-2 px-3 py-1 bg-white/20 rounded-full text-white text-xs font-bold">
-                        {achievement.rank}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {realAchievements.map((achievement: any, index: number) => (
+                <div 
+                  key={achievement.id}
+                  className="purple-card overflow-hidden group cursor-pointer hover:scale-105 hover:shadow-2xl transition-all duration-300"
+                  onClick={() => openImageModal(`/achievements/${achievement.image}`, achievement.title, achievement.type)}
+                >
+                  {/* Image/PDF Preview */}
+                  <div className="relative h-48 bg-gradient-to-br from-purple-500/20 to-purple-700/20 overflow-hidden">
+                    {achievement.type === 'pdf' ? (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="text-6xl text-red-400 mb-2">📄</div>
+                          <p className="text-white font-medium">PDF Document</p>
+                        </div>
                       </div>
+                    ) : (
+                      <Image
+                        src={`/achievements/${achievement.image}`}
+                        alt={achievement.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
+                    )}
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    
+                    {/* Rank Badge */}
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-purple-600 text-white text-sm font-bold rounded-full">
+                      {achievement.rank}
+                    </div>
+                    
+                    {/* Category Badge */}
+                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-sm rounded-full">
+                      {achievement.category}
                     </div>
                   </div>
-                  <div className="p-4 sm:p-6">
-                    <div className="mb-3">
-                      <span className="px-2 py-1 bg-yellow-500/20 text-yellow-200 text-xs font-medium rounded-full">
-                        {achievement.category}
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3 group-hover:text-yellow-300 transition-colors duration-300 leading-tight">
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
                       {achievement.title}
                     </h3>
-                    <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                      {achievement.description.length > 120 ? `${achievement.description.substring(0, 120)}...` : achievement.description}
+                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                      {achievement.description.length > 150 ? `${achievement.description.substring(0, 150)}...` : achievement.description}
                     </p>
-                    <div className="flex items-center justify-between text-xs sm:text-sm text-white/60 mb-3">
-                      <span className="flex items-center">
+                    
+                    {/* Highlights */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-purple-200 mb-2">Key Highlights:</h4>
+                      <ul className="space-y-1">
+                        {achievement.highlights.slice(0, 2).map((highlight: string, idx: number) => (
+                          <li key={idx} className="text-xs text-gray-400 flex items-start">
+                            <span className="text-purple-400 mr-2">•</span>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                      <span className="text-xs text-gray-400 flex items-center">
                         <i className="fas fa-calendar mr-1"></i>
                         {achievement.date}
                       </span>
-                      <button 
-                        onClick={() => openImageModal(`/images/${achievement.image}`, achievement.title, achievement.type)}
-                        className="flex items-center text-yellow-400 hover:text-yellow-300 transition-colors"
-                      >
-                        <i className={`fas fa-${achievement.type === 'pdf' ? 'file-pdf' : 'image'} mr-1`}></i>
-                        View {achievement.type === 'pdf' ? 'PDF' : 'Image'}
-                      </button>
+                      <div className="flex items-center text-purple-300 text-sm">
+                        <span>Click to view</span>
+                        <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-1">
-                      {achievement.tags.slice(0, 3).map((tag: any) => (
-                        <span key={tag} className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full">
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {achievement.tags.slice(0, 3).map((tag: string) => (
+                        <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-200 text-xs rounded-full">
                           #{tag}
                         </span>
                       ))}
@@ -136,73 +175,6 @@ export default function AchievementsPage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Achievements Grid */}
-          <div className="space-y-20">
-            {portfolioData.achievements.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="space-y-12">
-                {/* Category Header */}
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold text-white mb-4">
-                    {category.category}
-                  </h2>
-                  <div className="w-32 h-1 bg-gradient-to-r from-purple-600 to-violet-600 mx-auto rounded-full"></div>
-                </div>
-
-                {/* Category Items */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {category.items.map((achievement, index) => (
-                    <div
-                      key={index}
-                      className="glass-purple rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group"
-                    >
-                      {/* Icon */}
-                      <div className="text-6xl mb-6 text-center group-hover:scale-110 transition-transform duration-300">
-                        {achievement.icon}
-                      </div>
-
-                      {/* Content */}
-                      <div className="space-y-4">
-                        <div className="text-center">
-                          <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 mb-2">
-                            {achievement.title}
-                          </h3>
-                          <span className="inline-block px-4 py-2 text-sm text-purple-100 font-semibold bg-purple-500/30 rounded-full border border-purple-400/30">
-                            {achievement.year}
-                          </span>
-                        </div>
-                        
-                        <p className="text-white/80 leading-relaxed text-center">
-                          {achievement.description}
-                        </p>
-                      </div>
-
-                      {/* Progress Indicator */}
-                      <div className="mt-6 pt-6 border-t border-white/10">
-                        <div className="flex items-center justify-between text-sm mb-2">
-                          <span className="text-white/60 font-medium">Status</span>
-                          <span className={`font-semibold ${
-                            achievement.year === 'Ongoing' ? 'text-purple-300' : 'text-green-400'
-                          }`}>
-                            {achievement.year === 'Ongoing' ? 'In Progress' : 'Completed'}
-                          </span>
-                        </div>
-                        <div className="w-full bg-white/20 rounded-full h-3">
-                          <div 
-                            className={`h-3 rounded-full transition-all duration-500 ${
-                              achievement.year === 'Ongoing' 
-                                ? 'w-3/4 bg-gradient-to-r from-purple-500 to-purple-600' 
-                                : 'w-full bg-gradient-to-r from-green-500 to-green-600'
-                            }`}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
 
           {/* Call to Action */}
@@ -224,9 +196,9 @@ export default function AchievementsPage() {
         </div>
       </div>
 
-      {/* Image Modal */}
+      {/* Enhanced Image Modal */}
       {selectedImage && (
-        <ImageModal
+        <EnhancedImageModal
           isOpen={!!selectedImage}
           onClose={closeImageModal}
           imageSrc={selectedImage.src}
