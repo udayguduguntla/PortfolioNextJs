@@ -6,18 +6,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="glass-purple text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">UK</span>
               </div>
               <span className="text-xl font-bold">{portfolioData.personal.name.split(' ')[0]}</span>
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-white/70 leading-relaxed">
               {portfolioData.personal.description}
             </p>
             <div className="flex space-x-4">
@@ -25,7 +25,7 @@ export default function Footer() {
                 href={portfolioData.social.github} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors duration-200"
               >
                 <i className="fab fa-github text-lg"></i>
               </a>
@@ -33,7 +33,7 @@ export default function Footer() {
                 href={portfolioData.social.linkedin} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors duration-200"
               >
                 <i className="fab fa-linkedin text-lg"></i>
               </a>
@@ -41,7 +41,7 @@ export default function Footer() {
                 href={portfolioData.social.leetcode} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors duration-200"
               >
                 <i className="fas fa-code text-lg"></i>
               </a>
@@ -49,7 +49,7 @@ export default function Footer() {
                 href={portfolioData.social.codechef} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-purple-600 transition-colors duration-200"
               >
                 <i className="fas fa-trophy text-lg"></i>
               </a>
@@ -60,11 +60,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              <li><Link href="#about" className="text-gray-400 hover:text-white transition-colors duration-200">About Me</Link></li>
-              <li><Link href="#projects" className="text-gray-400 hover:text-white transition-colors duration-200">Projects</Link></li>
-              <li><Link href="#skills" className="text-gray-400 hover:text-white transition-colors duration-200">Skills</Link></li>
-              <li><Link href="#achievements" className="text-gray-400 hover:text-white transition-colors duration-200">Achievements</Link></li>
-              <li><Link href="#contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact</Link></li>
+              <li><Link href="#about" className="text-white/70 hover:text-white transition-colors duration-200">About Me</Link></li>
+              <li><Link href="#projects" className="text-white/70 hover:text-white transition-colors duration-200">Projects</Link></li>
+              <li><Link href="#skills" className="text-white/70 hover:text-white transition-colors duration-200">Skills</Link></li>
+              <li><Link href="#achievements" className="text-white/70 hover:text-white transition-colors duration-200">Achievements</Link></li>
+              <li><Link href="#contact" className="text-white/70 hover:text-white transition-colors duration-200">Contact</Link></li>
             </ul>
           </div>
 
@@ -72,11 +72,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Technologies</h3>
             <ul className="space-y-4">
-              <li><span className="text-gray-400">React & Next.js</span></li>
-              <li><span className="text-gray-400">Python & Flask</span></li>
-              <li><span className="text-gray-400">Machine Learning</span></li>
-              <li><span className="text-gray-400">Computer Vision</span></li>
-              <li><span className="text-gray-400">Full Stack Development</span></li>
+              <li><span className="text-white/70">React & Next.js</span></li>
+              <li><span className="text-white/70">Python & Flask</span></li>
+              <li><span className="text-white/70">Machine Learning</span></li>
+              <li><span className="text-white/70">Computer Vision</span></li>
+              <li><span className="text-white/70">Full Stack Development</span></li>
             </ul>
           </div>
 
@@ -85,23 +85,23 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Get In Touch</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <i className="fas fa-map-marker-alt w-5 h-5 text-blue-500 mt-1 flex-shrink-0"></i>
-                <p className="text-gray-400">
+                <i className="fas fa-map-marker-alt w-5 h-5 text-purple-300 mt-1 flex-shrink-0"></i>
+                <p className="text-white/70">
                   {portfolioData.contact.location}
                 </p>
               </div>
               <div className="flex items-center space-x-3">
-                <i className="fas fa-envelope w-5 h-5 text-blue-500 flex-shrink-0"></i>
+                <i className="fas fa-envelope w-5 h-5 text-purple-300 flex-shrink-0"></i>
                 <a 
                   href={`mailto:${portfolioData.contact.email}`}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-white/70 hover:text-white transition-colors duration-200"
                 >
                   {portfolioData.contact.email}
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <i className="fas fa-phone w-5 h-5 text-blue-500 flex-shrink-0"></i>
-                <p className="text-gray-400">{portfolioData.contact.availability}</p>
+                <i className="fas fa-phone w-5 h-5 text-purple-300 flex-shrink-0"></i>
+                <p className="text-white/70">{portfolioData.contact.availability}</p>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export default function Footer() {
               <Link
                 href={portfolioData.personal.resume}
                 target="_blank"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 rounded-lg transition-all duration-200 font-medium"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 px-6 py-3 rounded-lg transition-all duration-200 font-medium"
               >
                 <i className="fas fa-download"></i>
                 <span>Download Resume</span>
@@ -120,12 +120,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-white/70 text-sm">
               © {currentYear} {portfolioData.personal.name}. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-white/70 text-sm">
               {portfolioData.personal.tagline}
             </p>
           </div>

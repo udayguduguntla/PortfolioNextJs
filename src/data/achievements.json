@@ -1,0 +1,145 @@
+{
+  "achievements": [
+    {
+      "id": 1,
+      "title": "AINCAT 2025 - National Rank #3567",
+      "category": "Aptitude Test",
+      "date": "2025",
+      "rank": "#3567 Nationwide",
+      "description": "Successfully participated in AINCAT 2025, India's Biggest Career Aptitude Test conducted by Naukri.com, securing a rank among thousands of talented participants nationwide.",
+      "highlights": [
+        "India's Biggest Career Aptitude Test",
+        "Conducted by Naukri.com",
+        "Thousands of participants nationwide",
+        "Assessed aptitude and skills"
+      ],
+      "tags": ["AptitudeTest", "AINCAT2025", "NaukriCampus", "CareerGrowth"],
+      "image": "post_1.pdf",
+      "type": "pdf",
+      "icon": "fas fa-brain",
+      "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    {
+      "id": 2,
+      "title": "TCS CodeVita Season 12 - Global Rank 7574",
+      "category": "Coding Competition",
+      "date": "2024",
+      "rank": "Global Rank #7574",
+      "description": "Secured a global rank of 7574 in TCS CodeVita Season 12 – one of the world's largest coding competitions! An amazing experience that tested problem-solving skills.",
+      "highlights": [
+        "World's largest coding competition",
+        "Global participation",
+        "Problem-solving skills tested",
+        "Organized by Tata Consultancy Services"
+      ],
+      "tags": ["TCSCodeVita", "CodingChallenge", "GlobalRank", "Programming"],
+      "image": "Post_2.pdf",
+      "type": "pdf",
+      "icon": "fas fa-code",
+      "color": "linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)"
+    },
+    {
+      "id": 3,
+      "title": "Code Change Event - 1st Place Winner",
+      "category": "Programming Contest",
+      "date": "December 9, 2024",
+      "rank": "1st Place",
+      "description": "Won 1st place in the 'Code Change event' at Techcroma NECN, a national-level technical symposium hosted by Narayana Engineering College, Nellore.",
+      "highlights": [
+        "National-level technical symposium",
+        "Efficient code crafting challenge",
+        "Programming and analytical skills",
+        "Conducted on CodeTantra platform",
+        "Cash prize awarded"
+      ],
+      "tags": ["TechCroma", "CodeChange", "CodingChallenge", "FirstPlace"],
+      "image": "post_3.jpeg",
+      "type": "image",
+      "icon": "fas fa-trophy",
+      "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+    },
+    {
+      "id": 4,
+      "title": "Reverse Coding - 2nd Place (IEEE Certified)",
+      "category": "IEEE Competition",
+      "date": "2024",
+      "rank": "2nd Place",
+      "description": "Placed second in the 'Reverse Coding' competition at NEXUSVERSE-2.0, hosted by IEEE SB NBKRIST, and received a cash reward of 1000 INR!",
+      "highlights": [
+        "IEEE SB NBKRIST organized",
+        "NEXUSVERSE-2.0 event",
+        "Reverse coding challenge",
+        "HackerRank platform",
+        "Cash reward: 1000 INR"
+      ],
+      "tags": ["ReverseCoding", "IEEE", "NBKRIST", "HackerRank", "SecondPlace"],
+      "image": "Post_4.jpeg",
+      "type": "image",
+      "icon": "fas fa-medal",
+      "color": "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)"
+    },
+    {
+      "id": 5,
+      "title": "CVCORP Hackathon - Top 40 Finalist",
+      "category": "Hackathon",
+      "date": "November 8, 2024",
+      "rank": "Top 40 out of 4000+",
+      "description": "Made it through to the top 40 finalists in the CVCORP Hackathon across Andhra Pradesh, competing against over 4,000 participants through multiple challenging rounds.",
+      "highlights": [
+        "4,000+ initial participants",
+        "Top 40 finalist",
+        "Only MCA student among 130 BTech finalists",
+        "3 challenging rounds",
+        "String manipulation challenges",
+        "Real-world problem solving"
+      ],
+      "tags": ["Hackathon", "CVCorp", "Top40", "AndhraPradesh", "MCAStudent"],
+      "image": "Post_5.jpeg",
+      "type": "image",
+      "icon": "fas fa-laptop-code",
+      "color": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)"
+    },
+    {
+      "id": 6,
+      "title": "Web Development Workshop Organizer",
+      "category": "Workshop Leadership",
+      "date": "2024",
+      "rank": "Event Organizer",
+      "description": "Successfully organized a two-day Web Development Workshop at THINK CHAMP PRIVATE LIMITED for 70 eager students, covering HTML, CSS, SQL, and PHP.",
+      "highlights": [
+        "70 students participated",
+        "Two-day intensive workshop",
+        "HTML, CSS, SQL, PHP covered",
+        "Practical database integration",
+        "Registration and login system built",
+        "Positive student feedback"
+      ],
+      "tags": ["WebDevelopment", "Workshop", "HTML", "CSS", "SQL", "PHP", "Teaching"],
+      "image": "Post_6_1.jpeg",
+      "type": "image",
+      "icon": "fas fa-chalkboard-teacher",
+      "color": "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)"
+    },
+    {
+      "id": 7,
+      "title": "DevFesta Hackathon - 1st Prize Winner",
+      "category": "Python Competition",
+      "date": "2024",
+      "rank": "1st Prize (Gold Winner)",
+      "description": "Won 1st prize in the DevFesta hackathon organized by SkillBridge Hub and Nexzera! Earned a Gold Winner certificate and cash prize of 1000rs in Python programming.",
+      "highlights": [
+        "First hackathon participation",
+        "Gold Winner certificate",
+        "Cash prize: 1000 INR",
+        "Python programming challenge",
+        "Fastest completion time",
+        "SkillBridge Hub & Nexzera organized"
+      ],
+      "tags": ["Python", "Hackathon", "DevFesta", "SkillBridge", "Nexzera", "GoldWinner"],
+      "image": "Post_6_2.jpeg",
+      "type": "image",
+      "icon": "fas fa-python",
+      "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    }
+  ]
+}
