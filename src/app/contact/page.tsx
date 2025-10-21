@@ -29,8 +29,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen relative pt-24 pb-16">
-      <ImpressiveBackground variant="contact" />
-      <ToggleNavigation />
+      <InteractiveStarBackground variant="contact" />
+      <AntiqueNavigation />
       
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

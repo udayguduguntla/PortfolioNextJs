@@ -56,6 +56,7 @@ export default function AntiqueNavigation() {
   ]
 
   const getActiveId = () => {
+    if (!pathname) return 'home'
     if (pathname === '/') return 'home'
     if (pathname === '/about') return 'about'
     if (pathname === '/projects' || pathname.startsWith('/projects/')) return 'projects'
