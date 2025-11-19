@@ -100,7 +100,7 @@ export default function ModernNavigation() {
                   <motion.div
                     className={`
                       relative px-4 py-3 rounded-xl transition-all duration-200
-                      flex items-center space-x-3 min-w-[120px] justify-center
+                      flex items-center space-x-3 justify-center
                       ${isActive 
                         ? 'text-white' 
                         : 'text-gray-300 hover:text-white'

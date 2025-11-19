@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import Image from 'next/image'
 
 interface EnhancedImageModalProps {
@@ -39,7 +39,7 @@ export default function EnhancedImageModal({
     }
   }, [isOpen, onClose])
 
-  const modalVariants = {
+  const modalVariants: Variants = {
     hidden: { 
       opacity: 0,
       scale: 0.8,
@@ -65,7 +65,7 @@ export default function EnhancedImageModal({
     }
   }
 
-  const backdropVariants = {
+  const backdropVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
     exit: { opacity: 0 }
