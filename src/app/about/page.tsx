@@ -71,14 +71,6 @@ export default function AboutPage() {
                       </span>
                     </div>
                   </div>
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 glass-purple rounded-lg flex items-center justify-center text-purple-200 shadow-lg animate-bounce">
-                    <span className="text-sm sm:text-base lg:text-xl">💻</span>
-                  </div>
-                  <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 glass-purple rounded-lg flex items-center justify-center text-purple-200 shadow-lg animate-bounce animation-delay-1000">
-                    <span className="text-sm sm:text-base lg:text-xl">🚀</span>
-                  </div>
                 </div>
               </div>
             </div>

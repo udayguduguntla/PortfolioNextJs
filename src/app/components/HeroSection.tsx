@@ -143,19 +143,6 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-bounce text-2xl">
-                💻
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-bounce animation-delay-1000 text-2xl">
-                🚀
-              </div>
-              <div className="absolute top-1/4 -left-6 w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-pulse animation-delay-2000 text-lg">
-                ✨
-              </div>
-              <div className="absolute bottom-1/4 -right-6 w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-pulse animation-delay-3000 text-lg">
-                ⭐
-              </div>
             </div>
           </div>
         </div>
