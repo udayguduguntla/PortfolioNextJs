@@ -239,6 +239,41 @@ body::before {
   opacity: 0.3;
 }
 
+/* Enhanced Glass Effect */
+.glass-enhanced {
+  background: rgba(139, 92, 246, 0.08);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Interactive Glow Effect */
+.interactive-glow {
+  transition: all 0.3s ease;
+}
+
+.interactive-glow:hover {
+  box-shadow: 
+    0 0 40px rgba(139, 92, 246, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
 /* Ornamental Elements */
 .ornament {
   position: relative;

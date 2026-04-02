@@ -48,6 +48,13 @@ export default function ModernNavigation() {
       description: 'Achievements'
     },
     { 
+      id: 'files', 
+      label: 'Files', 
+      href: '/files', 
+      icon: '📁',
+      description: 'Documents & Assets'
+    },
+    { 
       id: 'contact', 
       label: 'Contact', 
       href: '/contact', 
@@ -62,6 +69,7 @@ export default function ModernNavigation() {
     if (pathname === '/about') return 'about'
     if (pathname === '/projects' || pathname.startsWith('/projects/')) return 'projects'
     if (pathname === '/achievements') return 'achievements'
+    if (pathname === '/files') return 'files'
     if (pathname === '/contact') return 'contact'
     return 'home'
   }

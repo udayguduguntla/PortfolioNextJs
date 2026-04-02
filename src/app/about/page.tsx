@@ -1,8 +1,9 @@
+'use client'
+
 import { portfolioData } from '@/data/portfolio'
 import ModernNavigation from '../components/ModernNavigation'
 import InteractiveStarBackground from '../components/InteractiveStarBackground'
-import PageTransition from '../components/PageTransition'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function AboutPage() {
   const highlights = [
@@ -55,9 +56,17 @@ export default function AboutPage() {
                 
                 {/* Profile Frame */}
                 <div className="relative purple-card p-4 sm:p-6 lg:p-8 shadow-2xl">
-                  <div className="w-full h-48 sm:h-64 lg:h-80 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg sm:rounded-xl flex items-center justify-center">
-                    <div className="w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">
+                  <div className="w-full h-48 sm:h-64 lg:h-80 bg-gradient-to-br from-purple-900/50 to-purple-800/50 rounded-lg sm:rounded-xl overflow-hidden relative">
+                    <Image
+                      src="/images/profilePic.jpg"
+                      alt={portfolioData.personal.name}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                    {/* Fallback initials if image fails */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-700" style={{display: 'none'}}>
+                      <span className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold">
                         {portfolioData.personal.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>

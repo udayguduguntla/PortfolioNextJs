@@ -2,8 +2,8 @@
 
 import { useParams } from 'next/navigation'
 import { portfolioData } from '@/data/portfolio'
-import ToggleNavigation from '../../components/ToggleNavigation'
-import ImpressiveBackground from '../../components/ImpressiveBackground'
+import ModernNavigation from '../../components/ModernNavigation'
+import InteractiveStarBackground from '../../components/InteractiveStarBackground'
 import Link from 'next/link'
 
 export default function ProjectDetailPage() {
@@ -15,8 +15,8 @@ export default function ProjectDetailPage() {
   if (!project) {
     return (
       <div className="min-h-screen relative pt-24 pb-16">
-        <ImpressiveBackground variant="projects" />
-        <ToggleNavigation />
+        <InteractiveStarBackground variant="projects" />
+        <ModernNavigation />
         
         <div className="relative z-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -37,15 +37,8 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen relative pt-24 pb-16">
-      {/* Purple gradient background with animated elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl animate-float animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-violet-500/20 rounded-full blur-3xl animate-float animation-delay-4000"></div>
-        <div className="absolute top-1/2 right-10 w-64 h-64 bg-purple-400/25 rounded-full blur-2xl animate-pulse-glow"></div>
-      </div>
-
-      <ToggleNavigation />
+      <InteractiveStarBackground variant="projects" />
+      <ModernNavigation />
       
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
