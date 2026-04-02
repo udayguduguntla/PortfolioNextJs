@@ -15,6 +15,8 @@ interface FileItem {
   description?: string
 }
 
+// Files data - Add new files here
+// The file explorer will automatically display them
 const files: FileItem[] = [
   // Achievements/Certificates
   {
@@ -31,7 +33,8 @@ const files: FileItem[] = [
     category: 'Achievements',
     description: 'Global Rank #7574 Certificate'
   },
-  // Resume
+  
+  // Documents
   {
     name: 'Resume - Uday Kumar',
     path: '/assets/documents/udayNewUAE.pdf',
@@ -39,6 +42,7 @@ const files: FileItem[] = [
     category: 'Documents',
     description: 'Professional Resume'
   },
+  
   // Images
   {
     name: 'Profile Picture',
@@ -89,7 +93,8 @@ const files: FileItem[] = [
     category: 'Images',
     description: 'Blog/Post image'
   },
-  // Favicons
+  
+  // Assets (Favicons, etc.)
   {
     name: 'Favicon SVG',
     path: '/images/favicon.svg',

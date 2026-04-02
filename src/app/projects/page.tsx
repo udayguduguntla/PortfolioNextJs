@@ -6,6 +6,12 @@ import { portfolioData } from '@/data/portfolio'
 import ModernNavigation from '../components/ModernNavigation'
 import InteractiveStarBackground from '../components/InteractiveStarBackground'
 
+// Format date to readable string (e.g., "Mar 2024")
+function formatDate(dateString: string): string {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+}
+
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const router = useRouter()
@@ -65,9 +71,13 @@ export default function ProjectsPage() {
               >
                 {/* Project Header */}
                 <div className="relative h-40 sm:h-48 lg:h-64 bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center">
+                  {/* Date Badge */}
+                  <div className="absolute top-3 sm:top-4 lg:top-6 right-3 sm:right-4 lg:right-6 px-2 sm:px-3 py-1 bg-white/20 text-white text-xs sm:text-sm font-medium rounded-full backdrop-blur-sm">
+                    {formatDate(project.date)}
+                  </div>
                   {project.featured && (
-                    <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs sm:text-sm font-bold rounded-full animate-pulse-glow">
-                      ⭐ Featured
+                    <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs sm:text-sm font-bold rounded-full">
+                      Featured
                     </div>
                   )}
                   <div className="text-4xl sm:text-6xl lg:text-8xl opacity-60 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-lg">
