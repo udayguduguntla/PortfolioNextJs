@@ -1,12 +1,13 @@
-// Portfolio Data - Extracted from reference content
+// Portfolio Data - Updated from Resume
 export const portfolioData = {
   personal: {
     name: "Uday Kumar Guduguntla",
-    title: "Full Stack Developer & MCA Student",
-    tagline: "Building the future, one line of code at a time.",
-    description: "Technically proficient and driven professional with a results-oriented mindset. I have a solid background in web development, programming, and practical knowledge gained from industry workshops.",
-    email: "contact@udayguduguntla.com",
-    location: "India",
+    title: "NLP Developer & Python Engineer",
+    tagline: "Building intelligent systems that understand and generate human language.",
+    description: "Results-driven NLP Developer and Python Engineer with hands-on experience in developing multi-agent systems, RAG pipelines, and production-grade AI applications. Currently working at Worktual Innovations building semantic layers for AI agent orchestration.",
+    email: "udayguduguntla@gmail.com",
+    phone: "+91 6302111386",
+    location: "Hyderabad, India",
     avatar: "/images/profile.jpg",
     resume: "/documents/udayNewUAE.pdf"
   },
@@ -19,26 +20,90 @@ export const portfolioData = {
   },
 
   skills: {
-    "Programming Languages": [
-      "Python", "Java", "JavaScript", "HTML5", "CSS3", "TypeScript"
+    "Core Programming": [
+      "Python", "JavaScript", "TypeScript", "Java", "SQL"
     ],
-    "Web Technologies": [
-      "React", "Next.js", "Node.js", "Express.js", "MongoDB", "MySQL"
+    "AI/ML & NLP": [
+      "Large Language Models (LLMs)", "Retrieval-Augmented Generation (RAG)",
+      "Multi-Agent Systems", "Semantic Search", "NLP", "Computer Vision"
     ],
-    "AI/ML & Computer Vision": [
-      "OpenCV", "Machine Learning", "Computer Vision", "Data Analysis"
+    "Backend & APIs": [
+      "FastAPI", "Flask", "Node.js", "Express.js", "REST APIs", "MCP Protocol"
     ],
-    "Tools & Frameworks": [
-      "Git", "VS Code", "Postman", "Bootstrap", "Tailwind CSS", "Flask"
+    "Databases & Storage": [
+      "PostgreSQL", "Neo4j", "MongoDB", "Qdrant", "Pinecone", "Redis"
+    ],
+    "DevOps & Tools": [
+      "Docker", "Git", "Linux", "Postman", "VS Code", "GitHub Actions"
+    ],
+    "Frameworks & Libraries": [
+      "LangChain", "LlamaIndex", "OpenAI API", "React", "Next.js", "Tailwind CSS"
     ]
   },
 
   projects: [
     {
+      id: "multi-agent-platform",
+      title: "Multi-Agent Orchestration Platform",
+      description: "Production-grade multi-agent system enabling intelligent task routing and agent orchestration. Built semantic layers for AI agents to collaborate on complex workflows with real-time state management.",
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+      technologies: ["Python", "FastAPI", "LangChain", "Neo4j", "PostgreSQL", "Multi-Agent Systems"],
+      features: [
+        "Intelligent task routing across multiple AI agents",
+        "Semantic understanding of user queries",
+        "State management for agent collaboration",
+        "Production-ready REST APIs",
+        "Real-time agent communication"
+      ],
+      github: "https://github.com/udayguduguntla",
+      demo: "#",
+      category: "AI/ML",
+      featured: true,
+      status: "in-progress"
+    },
+    {
+      id: "rag-pipeline",
+      title: "Enterprise RAG Pipeline System",
+      description: "End-to-end Retrieval-Augmented Generation pipeline with semantic search, document chunking, and vector storage. Supports multiple LLM providers and custom embedding models.",
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+      technologies: ["Python", "FastAPI", "Qdrant", "OpenAI API", "LlamaIndex", "RAG"],
+      features: [
+        "Multi-format document processing",
+        "Semantic chunking with overlap",
+        "Vector search with hybrid retrieval",
+        "Custom embedding model support",
+        "Streaming response generation"
+      ],
+      github: "https://github.com/udayguduguntla",
+      demo: "#",
+      category: "AI/ML",
+      featured: true,
+      status: "completed"
+    },
+    {
+      id: "mcp-server-framework",
+      title: "MCP Server Implementation",
+      description: "Model Context Protocol (MCP) server implementation for standardized AI agent communication. Enables seamless integration between LLMs and external tools with secure authentication.",
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+      technologies: ["Python", "MCP Protocol", "FastAPI", "Async Programming", "Tool Integration"],
+      features: [
+        "Standardized MCP protocol implementation",
+        "Tool discovery and registration",
+        "Secure authentication layer",
+        "Asynchronous request handling",
+        "Extensible tool architecture"
+      ],
+      github: "https://github.com/udayguduguntla",
+      demo: "#",
+      category: "AI/ML",
+      featured: true,
+      status: "completed"
+    },
+    {
       id: "color-detection",
       title: "Live Camera Color Detection",
       description: "Revolutionary accessibility tool helping color-blind individuals identify colors in real-time through live camera feed with voice feedback. This project aims to make the digital world more inclusive for people with color vision deficiency.",
-      image: "/images/projects/color-detection.jpg",
+      image: "https://images.pexels.com/photos/6059209/pexels-photo-6059209.jpeg",
       technologies: ["Python", "OpenCV", "Computer Vision", "Accessibility", "Machine Learning"],
       features: [
         "Real-time color detection using camera",
@@ -50,14 +115,14 @@ export const portfolioData = {
       github: "https://github.com/udayguduguntla/ColorDetention",
       demo: "https://github.com/udayguduguntla/ColorDetention",
       category: "Computer Vision",
-      featured: true,
+      featured: false,
       status: "completed"
     },
     {
       id: "license-plate-recognition",
       title: "License Plate Recognition System",
       description: "Advanced Automatic Number Plate Recognition (ANPR) system using computer vision and OCR technology for automatic vehicle identification and traffic management.",
-      image: "/images/projects/license-plate.jpg",
+      image: "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg",
       technologies: ["Python", "OpenCV", "OCR", "Image Processing", "Computer Vision"],
       features: [
         "Automatic license plate detection",
@@ -76,7 +141,7 @@ export const portfolioData = {
       id: "face-attendance",
       title: "Face Recognition Attendance System",
       description: "Comprehensive attendance management system using facial recognition technology with Flask backend for educational institutions and organizations.",
-      image: "/images/projects/face-attendance.jpg",
+      image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
       technologies: ["Python", "Flask", "Face Recognition", "Machine Learning", "Web Development"],
       features: [
         "Real-time face recognition",
@@ -95,7 +160,7 @@ export const portfolioData = {
       id: "traffic-generation",
       title: "Website Traffic Generation System",
       description: "Sophisticated web automation tool built with Java and Selenium for generating website traffic with proxy management and analytics tracking capabilities.",
-      image: "/images/projects/traffic-generation.jpg",
+      image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg",
       technologies: ["Java", "Selenium", "Web Automation", "Analytics", "Multi-threading"],
       features: [
         "Automated web traffic generation",
@@ -114,82 +179,53 @@ export const portfolioData = {
 
   achievements: [
     {
-      category: "Academic Excellence",
-      items: [
-        {
-          title: "MCA Program",
-          description: "Currently pursuing Master's in Computer Applications at Narayana Engineering College with strong academic performance",
-          year: "2023 - Present",
-          icon: "🎓"
-        },
-        {
-          title: "Academic Excellence",
-          description: "Consistent high performance in coursework and practical assignments",
-          year: "2023 - Present",
-          icon: "⭐"
-        }
-      ]
-    },
-    {
-      category: "Programming & Development",
-      items: [
-        {
-          title: "Open Source Contributions",
-          description: "Active contributor to various open-source projects and personal repositories",
-          year: "Ongoing",
-          icon: "🔗"
-        },
-        {
-          title: "Full Stack Projects",
-          description: "Successfully developed and deployed multiple full-stack web applications",
-          year: "2023 - Present",
-          icon: "💻"
-        },
-        {
-          title: "Computer Vision Projects",
-          description: "Developed innovative computer vision applications including color detection and license plate recognition",
-          year: "2024",
-          icon: "👁️"
-        }
-      ]
-    },
-    {
       category: "Competitive Programming",
       items: [
         {
-          title: "LeetCode Problem Solving",
-          description: "Active problem solver on LeetCode platform with consistent practice",
-          year: "Ongoing",
-          icon: "🧩"
+          title: "TCS CodeVita Season 12 - Global Rank #7574",
+          description: "Secured global rank 7574 in the world's largest coding competition with participants from across the globe",
+          year: "2024",
+          icon: "🏆"
         },
         {
-          title: "CodeChef Participation",
-          description: "Regular participant in CodeChef contests and programming challenges",
-          year: "Ongoing",
-          icon: "🏆"
+          title: "AINCAT 2025 - National Rank #3567",
+          description: "India's Biggest Career Aptitude Test conducted by Naukri.com",
+          year: "2025",
+          icon: "🧠"
         }
       ]
     },
     {
-      category: "Technical Proficiency",
+      category: "Hackathons & Competitions",
       items: [
         {
-          title: "Python Mastery",
-          description: "Proficient in Python programming for web development, data analysis, and machine learning",
-          year: "2023 - Present",
-          icon: "🐍"
+          title: "DevFista Hackathon - 1st Prize",
+          description: "Won first place in the national-level hackathon for innovative AI solution",
+          year: "2024",
+          icon: "🥇"
         },
         {
-          title: "JavaScript & Web Technologies",
-          description: "Strong command over modern JavaScript, React, and full-stack web development",
-          year: "2023 - Present",
-          icon: "🌐"
+          title: "TechChroma - 1st Prize",
+          description: "First place in technical competition showcasing innovative project development",
+          year: "2024",
+          icon: "🥇"
         },
         {
-          title: "Database Management",
-          description: "Experience with SQL and NoSQL databases for efficient data management",
-          year: "2023 - Present",
-          icon: "🗄️"
+          title: "CVCORP - Top 40 Finalist",
+          description: "Selected among top 40 participants in prestigious corporate competition",
+          year: "2024",
+          icon: "🎖️"
+        }
+      ]
+    },
+    {
+      category: "Certifications",
+      items: [
+        {
+          title: "MCP Certification",
+          description: "Certified in Model Context Protocol for AI agent development",
+          year: "2025",
+          icon: "📜"
         }
       ]
     }
@@ -200,46 +236,66 @@ export const portfolioData = {
       degree: "Master of Computer Applications (MCA)",
       institution: "Narayana Engineering College",
       period: "2023 - Present",
-      description: "Pursuing advanced studies in computer applications with focus on software development and emerging technologies.",
+      description: "Currently pursuing with CGPA of 8.8, focusing on AI/ML and advanced software development.",
+      cgpa: "8.8",
       status: "current"
     },
     {
-      degree: "Bachelor's Degree",
+      degree: "Bachelor of Science (B.Sc)",
       institution: "Previous Institution",
       period: "2020 - 2023",
-      description: "Foundation in computer science and programming with strong academic performance.",
+      description: "Graduated with CGPA of 9.2, building strong foundation in computer science fundamentals.",
+      cgpa: "9.2",
       status: "completed"
     }
   ],
 
   experience: [
     {
+      title: "NLP Developer & Python Engineer",
+      company: "Worktual Innovations",
+      period: "May 2025 - Present",
+      description: "Building multi-agent AI systems and semantic layers for intelligent agent orchestration. Developing production-grade RAG pipelines and MCP server implementations.",
+      technologies: ["Python", "FastAPI", "LangChain", "Neo4j", "PostgreSQL", "OpenAI API"],
+      current: true
+    },
+    {
       title: "Full Stack Developer",
       company: "Freelance",
-      period: "2023 - Present",
-      description: "Developing web applications using modern technologies including React, Node.js, and various databases.",
-      technologies: ["React", "Node.js", "MongoDB", "Express.js"]
+      period: "2023 - May 2025",
+      description: "Developed web applications using modern technologies including React, Node.js, and various databases.",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Python"]
     }
   ],
 
   blogs: [
     {
-      id: "accessible-ai",
-      title: "Building Accessible AI Solutions",
-      excerpt: "Exploring how AI can be made more accessible and inclusive for people with disabilities.",
-      content: "Full blog content about accessible AI solutions...",
-      publishedAt: "2024-01-15",
-      readTime: "5 min read",
-      tags: ["AI", "Accessibility", "Inclusion"],
+      id: "rag-systems",
+      title: "Building Production-Ready RAG Systems",
+      excerpt: "A deep dive into creating scalable RAG pipelines with semantic search and vector databases.",
+      content: "Full blog content about RAG systems...",
+      publishedAt: "2025-01-15",
+      readTime: "8 min read",
+      tags: ["RAG", "AI", "NLP", "Vector Databases"],
       featured: true
+    },
+    {
+      id: "multi-agent-systems",
+      title: "Orchestrating Multi-Agent AI Systems",
+      excerpt: "Best practices for building collaborative AI agent systems with semantic understanding.",
+      content: "Full blog content about multi-agent systems...",
+      publishedAt: "2025-02-20",
+      readTime: "10 min read",
+      tags: ["AI", "Multi-Agent", "LangChain", "Architecture"],
+      featured: false
     }
   ],
 
   contact: {
-    email: "contact@udayguduguntla.com",
-    phone: "+91-XXXXXXXXXX",
-    location: "India",
-    availability: "Available for freelance projects and full-time opportunities"
+    email: "udayguduguntla@gmail.com",
+    phone: "+91 6302111386",
+    location: "Hyderabad, India",
+    availability: "Open to opportunities in AI/ML and NLP development"
   }
 };
 

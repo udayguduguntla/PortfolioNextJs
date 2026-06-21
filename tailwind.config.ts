@@ -39,6 +39,7 @@ const config: Config = {
         'slide-up': 'slideUp 0.3s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
         'blob': 'blob 7s infinite',
+        'float': 'vintage-float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {

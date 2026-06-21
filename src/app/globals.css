@@ -176,6 +176,93 @@ body::before {
   animation: manuscript-unfold 1s ease-out forwards;
 }
 
+/* Animation Delay Utilities */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+.animate-float {
+  animation: vintage-float 6s ease-in-out infinite;
+}
+
+/* Additional Animation Utilities */
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.5);
+  }
+}
+
+/* Enhanced Glass Variants */
+.glass-enhanced {
+  background: rgba(139, 92, 246, 0.08);
+  backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 8px 32px rgba(139, 92, 246, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.interactive-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.interactive-glow:hover {
+  box-shadow:
+    0 15px 50px rgba(139, 92, 246, 0.25),
+    0 0 30px rgba(139, 92, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Toggle Navigation Styles */
+.toggle-bubble {
+  background: rgba(30, 27, 75, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.toggle-option.active {
+  background: linear-gradient(to right, #9333ea, #7c3aed);
+  color: white;
+}
+
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, #8B5CF6, #7C3AED, #A78BFA, #8B5CF6);
+  background-size: 300% 300%;
+  animation: vintage-shimmer 6s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+}
+
 /* Purple Glass Morphism */
 .glass-purple {
   background: rgba(139, 92, 246, 0.1);

@@ -1,8 +1,8 @@
+'use client'
+
 import { portfolioData } from '@/data/portfolio'
 import ModernNavigation from '../components/ModernNavigation'
 import InteractiveStarBackground from '../components/InteractiveStarBackground'
-import PageTransition from '../components/PageTransition'
-import { motion } from 'framer-motion'
 
 export default function AboutPage() {
   const highlights = [

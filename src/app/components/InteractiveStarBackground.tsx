@@ -18,7 +18,7 @@ interface InteractiveStarBackgroundProps {
 
 export default function InteractiveStarBackground({ variant = 'default' }: InteractiveStarBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>(null)
+  const animationRef = useRef<number | null>(null)
   const starsRef = useRef<Star[]>([])
   const mouseRef = useRef({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
