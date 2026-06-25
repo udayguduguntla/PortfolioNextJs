@@ -1,120 +1,106 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Award, BriefcaseBusiness, Home, Mail, Sparkles, UserRound } from 'lucide-react'
+
+const navigationItems = [
+  {
+    id: 'home',
+    label: 'Home',
+    href: '/',
+    Icon: Home,
+  },
+  {
+    id: 'about',
+    label: 'About',
+    href: '/about',
+    Icon: UserRound,
+  },
+  {
+    id: 'projects',
+    label: 'Projects',
+    href: '/projects',
+    Icon: BriefcaseBusiness,
+  },
+  {
+    id: 'achievements',
+    label: 'Wins',
+    href: '/achievements',
+    Icon: Award,
+  },
+  {
+    id: 'contact',
+    label: 'Contact',
+    href: '/contact',
+    Icon: Mail,
+  },
+]
 
 export default function ModernNavigation() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navigationItems = [
-    { 
-      id: 'home', 
-      label: 'Home', 
-      href: '/', 
-      icon: '🏠',
-      description: 'Portfolio Home'
-    },
-    { 
-      id: 'about', 
-      label: 'About', 
-      href: '/about', 
-      icon: '👤',
-      description: 'About Me'
-    },
-    { 
-      id: 'projects', 
-      label: 'Projects', 
-      href: '/projects', 
-      icon: '💻',
-      description: 'My Projects'
-    },
-    { 
-      id: 'achievements', 
-      label: 'Achievements', 
-      href: '/achievements', 
-      icon: '🏆',
-      description: 'Achievements'
-    },
-    { 
-      id: 'contact', 
-      label: 'Contact', 
-      href: '/contact', 
-      icon: '📧',
-      description: 'Get In Touch'
-    }
-  ]
-
-  const getActiveId = () => {
-    if (!pathname) return 'home'
-    if (pathname === '/') return 'home'
-    if (pathname === '/about') return 'about'
-    if (pathname === '/projects' || pathname.startsWith('/projects/')) return 'projects'
-    if (pathname === '/achievements') return 'achievements'
-    if (pathname === '/contact') return 'contact'
-    return 'home'
-  }
-
-  const activeId = getActiveId()
+  const activeId = getActiveId(pathname)
 
   return (
-    <motion.div 
-      className="fixed top-0 left-0 right-0 z-50"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+    <motion.header
+      className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-5"
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
     >
-      <div className="flex justify-center pt-4 px-4">
-        <motion.nav 
-          className={`
-            backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-4 
-            transition-all duration-300 ease-out
-            ${isScrolled 
-              ? 'bg-gray-900/80 shadow-2xl shadow-purple-500/10' 
-              : 'bg-gray-900/60 shadow-xl'
-            }
-          `}
-          layout
-        >
-          <div className="flex items-center justify-center space-x-1">
+      <nav
+        className={`mx-auto flex max-w-6xl items-center gap-3 rounded-2xl border px-3 py-2 shadow-2xl backdrop-blur-2xl transition-all duration-300 ${
+          isScrolled
+            ? 'border-white/14 bg-slate-950/72 shadow-purple-950/30'
+            : 'border-white/10 bg-white/[0.065] shadow-purple-950/12'
+        }`}
+      >
+        <Link href="/" className="group flex shrink-0 items-center gap-2 rounded-xl px-2 py-2 text-white">
+          <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/14 bg-white/10">
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-br from-fuchsia-400/25 via-violet-400/20 to-cyan-300/20"
+              animate={{ rotate: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <Sparkles className="relative h-5 w-5 text-purple-100" />
+          </span>
+          <span className="hidden leading-tight sm:block">
+            <span className="block text-sm font-bold">Uday</span>
+            <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-white/45">AI Portfolio</span>
+          </span>
+        </Link>
+
+        <div className="min-w-0 flex-1 overflow-x-auto">
+          <div className="flex min-w-max items-center justify-end gap-1">
             {navigationItems.map((item) => {
               const isActive = activeId === item.id
-              
+              const Icon = item.Icon
+
               return (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="relative group"
-                >
-                  <motion.div
-                    className={`
-                      relative px-4 py-3 rounded-xl transition-all duration-200
-                      flex items-center space-x-3 justify-center
-                      ${isActive 
-                        ? 'text-white' 
-                        : 'text-gray-300 hover:text-white'
-                      }
-                    `}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                <Link key={item.id} href={item.href} className="relative">
+                  <motion.span
+                    className={`relative flex h-11 items-center gap-2 rounded-xl px-3 text-sm font-semibold transition ${
+                      isActive ? 'text-purple-950' : 'text-white/68 hover:text-white'
+                    }`}
+                    whileHover={{ y: -1 }}
+                    whileTap={{ scale: 0.97 }}
                   >
-                    {/* Active background */}
                     <AnimatePresence>
                       {isActive && (
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl"
-                          layoutId="activeTab"
+                        <motion.span
+                          layoutId="modern-nav-active"
+                          className="absolute inset-0 rounded-xl bg-white shadow-lg shadow-purple-950/15"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
@@ -122,42 +108,24 @@ export default function ModernNavigation() {
                         />
                       )}
                     </AnimatePresence>
-
-                    {/* Hover background */}
-                    {!isActive && (
-                      <motion.div
-                        className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                      />
-                    )}
-
-                    {/* Content */}
-                    <div className="relative flex items-center space-x-2">
-                      <motion.span 
-                        className="text-lg"
-                        whileHover={{ scale: 1.2, rotate: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {item.icon}
-                      </motion.span>
-                      <span className="font-medium text-sm hidden sm:inline">
-                        {item.label}
-                      </span>
-                    </div>
-
-                    {/* Tooltip */}
-                    <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none">
-                      <div className="bg-gray-800 text-white px-3 py-1 rounded-lg text-xs whitespace-nowrap border border-gray-700">
-                        {item.description}
-                        <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45 border-l border-t border-gray-700"></div>
-                      </div>
-                    </div>
-                  </motion.div>
+                    <Icon className="relative h-4 w-4" />
+                    <span className="relative hidden sm:inline">{item.label}</span>
+                  </motion.span>
                 </Link>
               )
             })}
           </div>
-        </motion.nav>
-      </div>
-    </motion.div>
+        </div>
+      </nav>
+    </motion.header>
   )
+}
+
+function getActiveId(pathname: string | null) {
+  if (!pathname || pathname === '/') return 'home'
+  if (pathname.startsWith('/about')) return 'about'
+  if (pathname.startsWith('/projects')) return 'projects'
+  if (pathname.startsWith('/achievements')) return 'achievements'
+  if (pathname.startsWith('/contact')) return 'contact'
+  return 'home'
 }

@@ -132,7 +132,7 @@ export const portfolioData = {
         "Real-time processing"
       ],
       github: "https://github.com/udayguduguntla/LicencePlateDetention",
-      demo: "https://github.com/udayguduguntla/LicencePlateDetention",
+      demo: "/projects/license-plate-recognition/demo",
       category: "Computer Vision",
       featured: false,
       status: "completed"
@@ -173,6 +173,46 @@ export const portfolioData = {
       demo: "https://github.com/udayguduguntla/BuildingTrafficeOnAWebsiteJava",
       category: "Web Automation",
       featured: false,
+      status: "completed"
+    },
+    {
+      id: "plant-doctor",
+      title: "Plant Doctor & Fertilizer Advisor",
+      description: "AI-powered plant leaf health diagnostic tool using HSV color segmentation to detect diseases, nutrient deficiencies, and pests. Provides tailored organic and chemical fertilizer recommendations with treatment plans.",
+      image: "https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg",
+      technologies: ["Python", "OpenCV", "Computer Vision", "Streamlit", "HSV Segmentation", "NumPy"],
+      features: [
+        "Real-time leaf tissue analysis using HSV color segmentation",
+        "Detects chlorosis, necrosis, powdery mildew, and healthy tissue",
+        "Custom fertilizer recommendations with NPK ratios",
+        "Organic and chemical treatment plans for diseases",
+        "Interactive tissue composition visualization",
+        "Premium glassmorphic UI with constellation animation background"
+      ],
+      github: "https://github.com/udayguduguntla",
+      demo: "/projects/plant-doctor/demo",
+      category: "Machine Learning",
+      featured: false,
+      status: "completed"
+    },
+    {
+      id: "license-plate-reader",
+      title: "License Plate Reader (ANPR)",
+      description: "Automatic Number Plate Recognition system using OpenCV contour detection and Tesseract OCR to detect and read vehicle license plates from images with high accuracy.",
+      image: "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg",
+      technologies: ["Python", "OpenCV", "Tesseract OCR", "Computer Vision", "Streamlit", "Image Processing"],
+      features: [
+        "Real-time license plate localization using contour detection",
+        "OCR text extraction with Tesseract engine",
+        "Multi-format image support (JPG, PNG, BMP, WebP)",
+        "Visual plate annotation and crop extraction",
+        "Interactive Streamlit dashboard with dark theme",
+        "Constellation canvas background animation"
+      ],
+      github: "https://github.com/udayguduguntla",
+      demo: "/projects/license-plate-reader/demo",
+      category: "Computer Vision",
+      featured: true,
       status: "completed"
     }
   ],

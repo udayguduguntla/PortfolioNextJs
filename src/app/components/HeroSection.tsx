@@ -2,166 +2,173 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-// Using Font Awesome icons instead
+import { motion } from 'framer-motion'
+import {
+  ArrowRight,
+  BrainCircuit,
+  Code2,
+  Github,
+  Linkedin,
+  Mail,
+  Radar,
+  Sparkles,
+  TerminalSquare,
+} from 'lucide-react'
 import { portfolioData } from '@/data/portfolio'
+
+const roles = ['NLP Developer', 'Python Engineer', 'AI Agent Builder', 'RAG Systems Developer']
+
+const signalCards = [
+  { label: 'Current focus', value: 'Agent orchestration', Icon: BrainCircuit },
+  { label: 'Core stack', value: 'Python, FastAPI, LangChain', Icon: TerminalSquare },
+  { label: 'Strength', value: 'Production AI workflows', Icon: Radar },
+]
 
 export default function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0)
-  
-  const roles = [
-    'Full Stack Developer',
-    'AI/ML Engineer',
-    'Computer Vision Specialist',
-    'Problem Solver'
-  ]
+  const [imgError, setImgError] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length)
-    }, 3000)
+    }, 2800)
     return () => clearInterval(interval)
-  }, [roles.length])
+  }, [])
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16">
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-4 py-2 glass-purple rounded-full text-sm">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                Available for Opportunities
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-                  {portfolioData.personal.name.split(' ')[0]}
-                </span>
-              </h1>
-              
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-purple-200 min-h-[3rem] flex items-center justify-center lg:justify-start flex-wrap">
-                <span className="mr-2">A Passionate</span>
-                <span className="font-semibold text-purple-300 transition-all duration-500">
-                  {roles[currentRole]}
-                </span>
-              </div>
-              
-              <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                {portfolioData.personal.description}
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full">
-              <Link
-                href="/projects"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg text-center font-semibold text-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                🚀 View My Projects
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-4 glass-purple rounded-lg hover:bg-purple-500/30 transition-all duration-300 font-semibold text-center border-2 border-purple-400/30 text-white"
-              >
-                📧 Get In Touch
-              </Link>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6">
-              <a
-                href={portfolioData.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 hover:text-white transition-all duration-300 hover:scale-110"
-                title="GitHub"
-              >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-              <a
-                href={portfolioData.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 hover:text-white transition-all duration-300 hover:scale-110"
-                title="LinkedIn"
-              >
-                <i className="fab fa-linkedin text-xl"></i>
-              </a>
-              <a
-                href={portfolioData.social.leetcode}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 hover:text-white transition-all duration-300 hover:scale-110"
-                title="LeetCode"
-              >
-                <i className="fas fa-code text-xl"></i>
-              </a>
-              <a
-                href={portfolioData.social.codechef}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 hover:text-white transition-all duration-300 hover:scale-110"
-                title="CodeChef"
-              >
-                <i className="fas fa-trophy text-xl"></i>
-              </a>
-            </div>
+    <section id="home" className="relative min-h-screen pt-28 sm:pt-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="max-w-4xl"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-purple-100 backdrop-blur-xl">
+            <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.75)]" />
+            Available for AI, NLP, and backend work
           </div>
 
-          {/* Profile Portrait */}
-          <div className="relative order-first lg:order-last">
-            <div className="relative w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 mx-auto">
-              {/* Purple glow background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full blur-2xl opacity-30"></div>
-              
-              {/* Profile frame */}
-              <div className="relative w-full h-full purple-card rounded-full overflow-hidden p-4">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-purple-400 shadow-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                    <Image
-                      src="/images/profilePic.jpg"
-                      alt={portfolioData.personal.name}
-                      fill
-                      className="object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = 'flex';
-                      }}
-                    />
-                    <div className="w-24 sm:w-32 lg:w-40 h-24 sm:h-32 lg:h-40 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center" style={{display: 'none'}}>
-                      <span className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold">
-                        {portfolioData.personal.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+          <h1 className="mt-7 text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
+            Building intelligent systems that feel ready for the real world.
+          </h1>
+
+          <div className="mt-5 flex min-h-10 flex-wrap items-center gap-3 text-lg text-white/72 sm:text-2xl">
+            <span>I work as a</span>
+            <motion.span
+              key={roles[currentRole]}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-xl border border-white/12 bg-white/[0.08] px-3 py-1 font-semibold text-purple-100"
+            >
+              {roles[currentRole]}
+            </motion.span>
+          </div>
+
+          <p className="mt-6 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
+            {portfolioData.personal.description}
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-purple-950 shadow-lg shadow-purple-950/15 transition hover:translate-y-[-1px]"
+            >
+              View Projects
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/14 bg-white/10 px-6 py-3.5 font-semibold text-white transition hover:bg-white/18"
+            >
+              <Mail className="h-4 w-4" />
+              Contact Me
+            </Link>
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <SocialLink href={portfolioData.social.github} label="GitHub" Icon={Github} />
+            <SocialLink href={portfolioData.social.linkedin} label="LinkedIn" Icon={Linkedin} />
+            <SocialLink href={portfolioData.social.leetcode} label="LeetCode" Icon={Code2} />
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, delay: 0.08, ease: 'easeOut' }}
+          className="relative"
+        >
+          <div className="overflow-hidden rounded-2xl border border-white/14 bg-white/[0.07] shadow-2xl shadow-purple-950/24 backdrop-blur-2xl">
+            <div className="relative min-h-[520px] p-5 sm:p-6">
+              <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-400/16 via-violet-400/10 to-cyan-300/12" />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-purple-100">Portfolio signal</p>
+                    <p className="text-xs text-white/48">Live profile snapshot</p>
+                  </div>
+                  <Sparkles className="h-5 w-5 text-purple-100" />
+                </div>
+
+                <div className="mt-8 flex justify-center">
+                  <div className="relative h-64 w-64 overflow-hidden rounded-[2rem] border border-white/16 bg-white/10 p-3 shadow-2xl sm:h-72 sm:w-72">
+                    <div className="h-full w-full overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-purple-100 to-purple-200">
+                      {imgError ? (
+                        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-purple-600 to-violet-800 text-5xl font-black text-white">
+                          {portfolioData.personal.name.split(' ').map((part) => part[0]).join('')}
+                        </div>
+                      ) : (
+                        <img
+                          src="/images/profilePic.jpg"
+                          alt={portfolioData.personal.name}
+                          className="h-full w-full object-cover"
+                          onError={() => setImgError(true)}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-bounce text-2xl">
-                💻
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-bounce animation-delay-1000 text-2xl">
-                🚀
-              </div>
-              <div className="absolute top-1/4 -left-6 w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-pulse animation-delay-2000 text-lg">
-                ✨
-              </div>
-              <div className="absolute bottom-1/4 -right-6 w-12 h-12 glass-purple rounded-full flex items-center justify-center text-purple-200 shadow-lg animate-pulse animation-delay-3000 text-lg">
-                ⭐
+
+                <div className="mt-8 grid gap-3">
+                  {signalCards.map((card, index) => (
+                    <motion.div
+                      key={card.label}
+                      initial={{ opacity: 0, y: 18 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.22 + index * 0.08 }}
+                      className="flex items-center gap-4 rounded-2xl border border-white/12 bg-black/16 p-4"
+                    >
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-purple-100">
+                        <card.Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/42">{card.label}</p>
+                        <p className="mt-1 font-semibold text-white">{card.value}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-
+        </motion.div>
       </div>
     </section>
+  )
+}
+
+function SocialLink({ href, label, Icon }: { href: string; label: string; Icon: typeof Github }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-white/12 bg-white/[0.075] px-4 py-2.5 text-sm font-semibold text-white/72 transition hover:bg-white/12 hover:text-white"
+    >
+      <Icon className="h-4 w-4" />
+      {label}
+    </a>
   )
 }

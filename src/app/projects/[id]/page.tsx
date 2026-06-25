@@ -6,6 +6,10 @@ import ToggleNavigation from '../../components/ToggleNavigation'
 import ImpressiveBackground from '../../components/ImpressiveBackground'
 import Link from 'next/link'
 
+function getDemoHref(projectId: string) {
+  return `/projects/${projectId}/demo`
+}
+
 export default function ProjectDetailPage() {
   const params = useParams()
   const projectId = params?.id as string
@@ -103,7 +107,7 @@ export default function ProjectDetailPage() {
                   View Source Code
                 </a>
                 <a
-                  href={project.demo}
+                  href={getDemoHref(project.id)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -213,6 +217,68 @@ export default function ProjectDetailPage() {
                     various traffic patterns. With integrated proxy support and comprehensive analytics, it provides valuable 
                     insights for website performance testing and optimization.
                   </p>
+                </div>
+              )}
+
+              {project.id === 'plant-doctor' && (
+                <div className="space-y-6">
+                  <p>
+                    The Plant Doctor & Fertilizer Advisor is an intelligent computer vision application that diagnoses plant 
+                    health issues from leaf images. Using HSV color space segmentation, it analyzes leaf tissue composition 
+                    to detect healthy green areas, chlorosis (yellowing from nutrient deficiency), necrosis (brown spots from 
+                    fungal/bacterial infection), and powdery mildew (white fungal coating).
+                  </p>
+                  <p>
+                    Beyond diagnosis, the system generates comprehensive treatment plans with specific NPK fertilizer ratios, 
+                    organic alternatives (neem oil, bone meal, compost tea), chemical control options, and cultural practice 
+                    adjustments. The application features a premium glassmorphic Streamlit dashboard with a dynamic 
+                    constellation particle animation background for an immersive user experience.
+                  </p>
+                  <p>
+                    Built entirely with Python, OpenCV, NumPy, and Streamlit, the source is available through the code link
+                    for review and deployment. You can explore the full implementation including the color segmentation engine,
+                    diagnostic logic, and custom UI components.
+                  </p>
+                  <a
+                    href={getDemoHref(project.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mt-4"
+                  >
+                    <i className="fas fa-external-link-alt mr-2"></i>
+                    Open Project Demo
+                  </a>
+                </div>
+              )}
+
+              {project.id === 'license-plate-reader' && (
+                <div className="space-y-6">
+                  <p>
+                    The License Plate Reader is a production-ready Automatic Number Plate Recognition (ANPR) system that 
+                    combines OpenCV contour detection with Tesseract OCR to accurately locate and read vehicle license 
+                    plates from images. The system processes uploaded images through a pipeline of edge detection, 
+                    contour approximation, perspective correction, and optical character recognition.
+                  </p>
+                  <p>
+                    The application features a sleek Streamlit dashboard with real-time visual feedback, displaying the 
+                    original image alongside the annotated detection with bounding boxes and extracted plate text. The 
+                    cropped plate region is also shown for verification, and the system handles various image formats 
+                    including JPG, PNG, BMP, and WebP.
+                  </p>
+                  <p>
+                    Built with Python, OpenCV, Tesseract OCR, and Streamlit, this project demonstrates practical computer 
+                    vision and OCR integration. The source includes the CLI version for batch processing and the Streamlit
+                    web application with the premium constellation background.
+                  </p>
+                  <a
+                    href={getDemoHref(project.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mt-4"
+                  >
+                    <i className="fas fa-external-link-alt mr-2"></i>
+                    Open Project Demo
+                  </a>
                 </div>
               )}
             </div>

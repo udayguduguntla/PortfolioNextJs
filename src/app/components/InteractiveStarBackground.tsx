@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 
 interface Star {
   x: number
@@ -192,6 +192,16 @@ export default function InteractiveStarBackground({ variant = 'default' }: Inter
     }
   }, [variant])
 
+  const particles = useMemo(() => {
+    if (typeof window === 'undefined') return []
+    return [...Array(15)].map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 3}s`,
+      duration: `${2 + Math.random() * 2}s`
+    }))
+  }, [])
+
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
       <canvas
@@ -207,20 +217,22 @@ export default function InteractiveStarBackground({ variant = 'default' }: Inter
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-800/10 to-transparent" />
       
       {/* Floating particles for extra magic */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-purple-400 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
+      {particles.length > 0 && (
+        <div className="absolute inset-0 overflow-hidden">
+          {particles.map((p, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-purple-400 rounded-full animate-pulse"
+              style={{
+                left: p.left,
+                top: p.top,
+                animationDelay: p.delay,
+                animationDuration: p.duration
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
